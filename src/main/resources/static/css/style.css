@@ -142,3 +142,14 @@ h2 {
 .control--checkbox input:disabled:checked ~ .control__indicator {
   background-color: #7e0cf5;
   opacity: .2; }
+
+.btn-primary {
+  background-color: hsl(162, 100%, 40%);
+  border: none;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: hsl(162, 100%, 30%);
+  border: none;
+}

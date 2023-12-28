@@ -58,7 +58,7 @@ public class AccountController {
             model.addAttribute("login", true);
             if (visitedLogin) {
                 if (authService.login(request, finalEmail, password)) {
-                    return "redirect:/authentication";
+                    return "redirect:/";
                 } else {
                     model.addAttribute("errorPassword", "Invalid password");
                 }
@@ -99,7 +99,7 @@ public class AccountController {
                     }
                     if (!(invalidName || invalidTitle || nullTitle || nullName)) {
                         authService.register(request, finalEmail, password, name, title);
-                        return "redirect:/authentication";
+                        return "redirect:/";
                     }
                 }
                 visitedRegisterTwo = true;

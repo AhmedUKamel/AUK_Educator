@@ -3,7 +3,7 @@
     --first-color: hsl(var(--hue), 100%, 40%);
 }
 
-span.first-color {
+.first-color {
     color: var(--first-color);
 }
 
@@ -30,4 +30,19 @@ footer {
 
 .accordion-button {
     cursor: initial; !Important
+}
+a.first-color,
+a.first-color:hover {
+    color: var(--first-color);
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: hsl(162, 100%, 40%) !important;
+    border: none !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: hsl(162, 100%, 30%); !important;
+    border: none !important;
 }
