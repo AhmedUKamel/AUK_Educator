@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Accounts</title>
+</head>
+<body>
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('https://i.ibb.co/CVf4r3c/bg-1.jpg');"></div>
+    <div class="contents order-2 order-md-1">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7" th:if="${checkAccount}">
+                    <h3>Accounts in <strong>Educator</strong></h3>
+                    <form action="/account" method="post">
+                        <div class="form-group first">
+                            <label for="email-check">Email</label>
+                            <input type="email" class="form-control" placeholder="example@gmail.com"
+                                   id="email-check" name="email" th:value="${email}" required/>
+                            <div class="alert alert-danger" role="alert" th:if="${errorEmail}"
+                                 th:text="${errorEmail}"></div>
+                        </div>
+                        <input type="submit" value="Continue with email" class="btn btn-block btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-7" th:if="${login}">
+                    <h3>Login to <strong>Educator</strong></h3>
+                    <form action="/account" method="post">
+                        <div class="form-group first">
+                            <label for="email-login">Email</label>
+                            <input type="email" class="form-control"
+                                   id="email-login" name="email" th:value="${email}" readonly/>
+                        </div>
+                        <div class="form-group last mb-3">
+                            <label for="password-login">Password</label>
+                            <input type="password" class="form-control" placeholder="Your Password"
+                                   id="password-login" name="password" th:value="${password}" required>
+                            <div class="alert alert-danger" role="alert" th:if="${errorPassword}"
+                                 th:text="${errorPassword}"></div>
+                        </div>
+                        <input type="submit" value="Login Now" class="btn btn-block btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-7" th:if="${registerOne}">
+                    <h3>Signup in <strong>Educator</strong></h3>
+                    <form action="/account" method="post">
+                        <div class="form-group first">
+                            <label for="email-register-one">Email</label>
+                            <input type="email" class="form-control"
+                                   id="email-register-one" name="email" th:value="${email}" readonly/>
+                        </div>
+                        <div class="form-group last mb-3">
+                            <label for="password-register-one">Password</label>
+                            <input type="password" class="form-control" placeholder="Write your password"
+                                   id="password-register-one" name="password" th:value="${password}" required>
+                            <div class="alert alert-danger" role="alert" th:if="${errorPassword}"
+                                 th:text="${errorPassword}"></div>
+                        </div>
+                        <div class="form-group last mb-3">
+                            <label for="confirm-password-register-one">Confirm Password</label>
+                            <input type="password" class="form-control" placeholder="Rewrite your password"
+                                   id="confirm-password-register-one" name="confirm" th:value="${confirm}" required>
+                            <div class="alert alert-danger" role="alert" th:if="${errorConfirm}"
+                                 th:text="${errorConfirm}"></div>
+                        </div>
+                        <input type="submit" value="Continue Signup" class="btn btn-block btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-7" th:if="${registerTwo}">
+                    <h3>Complete Signup in <strong>Educator</strong></h3>
+                    <form action="/account" method="post">
+                        <div class="form-group first">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" th:value="${name}"
+                                   placeholder="Enter full name" required/>
+                            <div class="alert alert-danger" role="alert" th:if="${errorName}"
+                                 th:text="${errorName}"></div>
+                        </div>
+                        <div class="form-group first">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" th:value="${title}"
+                                   placeholder="Job title" required/>
+                            <div class="alert alert-danger" role="alert" th:if="${errorTitle}"
+                                 th:text="${errorTitle}"></div>
+                        </div>
+                        <input type="hidden" name="password" th:value="${password}" required>
+                        <input type="hidden" name="confirm" th:value="${confirm}" required>
+                        <input type="hidden" name="email" th:value="${email}" required/>
+                        <input type="submit" value="Finish Signup" class="btn btn-block btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

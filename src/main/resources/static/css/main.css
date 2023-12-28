@@ -1,0 +1,33 @@
+:root {
+    --hue: 162;
+    --first-color: hsl(var(--hue), 100%, 40%);
+}
+
+span.first-color {
+    color: var(--first-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    font-size: 1.5rem;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.small-image {
+    width: 50px;
+    height: 50px;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button {
+    cursor: initial; !Important
+}

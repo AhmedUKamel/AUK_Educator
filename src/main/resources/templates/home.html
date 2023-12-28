@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Educator Online Courses Platform</title>
+</head>
+<body layout:fragment="body">
+<header class="py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xxl-6">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder mb-3">
+                        Our mission is to empower individuals worldwide.
+                    </h1>
+                    <p class="lead fw-normal text-muted mb-4">
+                        We strive to offer a diverse range of courses across various subjects, enabling learners to
+                        enhance their skills, pursue their passions, and achieve their personal and professional goals.
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="#about">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="py-5 bg-light" id="about">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid rounded mb-5 mb-lg-0"
+                     src="https://i.ibb.co/MgdSm6w/img.jpg"
+                     alt="..."/>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">Founding The Platform</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    <strong>Visionary Ideation:</strong> Our platform was founded upon a vision to revolutionize
+                    education by leveraging
+                    technology to make learning accessible to everyone, transcending geographical barriers and financial
+                    limitations.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-first order-lg-last">
+                <img class="img-fluid rounded mb-5 mb-lg-0"
+                     src="https://i.ibb.co/Mfs0LsX/img.jpg"
+                     alt="..."/>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">Growth</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    <strong>Expansive Course Catalog:</strong> Our platform continuously expands its course catalog,
+                    offering a diverse
+                    array of subjects, from traditional disciplines to emerging fields, ensuring there's something for
+                    every learner.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid rounded mb-5 mb-lg-0"
+                     src="https://i.ibb.co/JFS50BY/img.jpg"
+                     alt="..."/>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">Beyond</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    <strong>Personalized Learning:</strong> Going beyond traditional education
+                    models, we embrace personalized learning experiences, tailoring courses to meet individual learning
+                    styles and preferences.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-first order-lg-last">
+                <img class="img-fluid rounded mb-5 mb-lg-0"
+                     src="https://i.ibb.co/GvCCXh7/img.jpg"
+                     alt="..."/>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">Goals</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    <strong>Empowerment and Skill Enhancement:</strong> Our primary goal is to
+                    empower learners by providing them with the tools, skills, and knowledge necessary to thrive in
+                    their personal and professional lives.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <div class="text-center">
+            <h2 class="fw-bolder">Our Instructors</h2>
+            <p class="lead fw-normal text-muted mb-5">
+                Dedicated to quality and your success
+            </p>
+        </div>
+        <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5 mb-5 mb-xl-0" th:each="appUser : ${instructors}">
+                <div class="text-center">
+                    <img class="img-fluid rounded-circle mb-4 px-4"
+                         th:src="${appUser.picture}" alt="..." src=""/>
+                    <h5 class="fw-bolder" th:text="${appUser.name}"></h5>
+                    <div class="fst-italic text-muted" th:text="${appUser.title}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
