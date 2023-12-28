@@ -8,6 +8,7 @@ import com.ahmedukamel.educator.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserResponse> getInstructors() {
-        return userRepository.findAllByInstructor(true).stream().map(UserMapper::mapToResponse).toList();
+        return userRepository.findAllByInstructor(true).stream().sorted(Comparator.comparing(AppUser::getId)).map(UserMapper::mapToResponse).toList();
     }
 
     @Override

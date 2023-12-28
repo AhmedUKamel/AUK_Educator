@@ -14,8 +14,15 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/assets/**", "/css/**", "/js/**", "/","/account", "/courses/**").permitAll()
-                        .anyRequest().authenticated());
+                        request.requestMatchers("/assets/**", "/css/**", "/js/**", "/", "/account", "/courses/**").permitAll()
+                                .anyRequest().authenticated()
+                )
+                .logout(logout ->
+                        logout.logoutUrl("/logout")
+                                .logoutSuccessUrl("/")
+                                .deleteCookies("JSESSIONID", "remember-me")
+                                .clearAuthentication(true)
+                );
         return http.build();
     }
 }
