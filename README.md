@@ -15,7 +15,13 @@ Educator: A dynamic online courses platform repository on GitHub, fostering inte
 
 ## Installation
 
-Under progress...
+* Clone the project into your machine:
+    ~~~git
+    git clone https://github.com/AhmedUKamel/auk-educator-website.git
+    ~~~
+
+* Compile, build, and run the project using `Dockerfile`
+
 
 ## Usage
 
