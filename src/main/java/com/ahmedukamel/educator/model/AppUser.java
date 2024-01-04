@@ -32,6 +32,7 @@ public class AppUser implements UserDetails {
     @Column(nullable = false)
     private String password;
     private String picture;
+    @Transient
     private Set<Role> roles = new HashSet<>();
     @CreationTimestamp
     private LocalDateTime registration;
